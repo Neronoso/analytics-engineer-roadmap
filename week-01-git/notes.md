@@ -16,3 +16,7 @@ It lets you: go back in time, work in parallel branches, collaborate without ove
 - git branch — create a parallel version of the project
 - git checkout — switch branches
 - git merge — combine branches
+
+## What Branches are
+
+It allows to work on the bug fixes or editing the code without having an influence on the main code so you could work in parallel. It's like creating a copy of a project where I can experement and make changes independently.
