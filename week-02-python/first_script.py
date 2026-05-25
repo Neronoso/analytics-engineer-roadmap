@@ -38,6 +38,43 @@ players = [
     {'name': 'Ivan', 'country': 'UA', 'total_bets': 175},
 ]
 
-for x in players:
-    if x['total_bets'] >= 100:
-        print(f"{x['name']} | {x['country']} | {x['total_bets']} bets")
+# for x in players:
+#     if x['total_bets'] >= 100:
+#         print(f"{x['name']} | {x['country']} | {x['total_bets']} bets")
+
+### Task 4:
+# Goal: Write a function called summarize_players that takes the players list and prints:
+
+# Total players: 5
+# Active players (>100 bets): 3
+# Top player: John (310 bets)
+
+### Old version:
+# total_players_list = []
+# active_players_list = []
+# top_player = {}
+
+# for x in players:
+#     if x['name'] not in total_players_list:
+#         total_players_list.append(x['name'])
+#     if x['name'] not in active_players_list and x['total_bets'] > 100:
+#         active_players_list.append(x['name'])
+
+# print(len(active_players_list))
+
+### New version:
+def summarize_players(players):
+    total_players = len(players)
+    active_players = 0
+    biggest_bet_dict = max(players, key = lambda players: players['total_bets'])
+    biggest_bet_player = biggest_bet_dict['name']
+    biggest_bet_num = biggest_bet_dict['total_bets']
+
+    for x in players:
+        if x['total_bets'] > 100:
+            active_players += 1
+    print(f"Total players: {total_players} \nActive players (>100 bets): {active_players}\nTop player: {biggest_bet_player} ({biggest_bet_num} bets)")
+
+
+summarize_players(players)
+        
