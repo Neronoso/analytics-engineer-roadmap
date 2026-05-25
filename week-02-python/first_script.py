@@ -10,26 +10,34 @@
 # Task 2:
 # Goal: Write a script that stores your tools as a dictionary where the key is the tool name 
 # and the value is your current skill level. Then write a function that prints each tool and level.
+
+# Note:
+# I need to use items() to unpack the dictionary
+
 # dict1 = {   'SQL':'Advanced'
 #          ,  'Python': 'Beginner'
 #          ,  'dbt': 'No experience'
 #          ,  'Git': 'Beginner'
 #          ,  'Airflow': 'No experience'
 #          }
+# def print_skills(var):
+#     for i, x in var.items():
+#         print(f"{i} - {x}")
 
-# for i, x in dict1.items():
-#     print(f"{i} - {x}")
-# Note:
-# I need to use items() to unpack the dictionary
+# print_skills(dict1)
+#Task 3:
+#Goal: Write a script that:
+# Creates a list of dictionaries — each one representing a player with name, country, and total_bets
+# Prints only the players who have more than 100 bets
 
-dict1 = {   'SQL':'Advanced'
-         ,  'Python': 'Beginner'
-         ,  'dbt': 'No experience'
-         ,  'Git': 'Beginner'
-         ,  'Airflow': 'No experience'
-         }
-def print_skills(var):
-    for i, x in var.items():
-        print(f"{i} - {x}")
+players = [
+    {'name': 'Alex', 'country': 'UA', 'total_bets': 250},
+    {'name': 'Maria', 'country': 'PL', 'total_bets': 80},
+    {'name': 'John', 'country': 'UK', 'total_bets': 310},
+    {'name': 'Anna', 'country': 'DE', 'total_bets': 45},
+    {'name': 'Ivan', 'country': 'UA', 'total_bets': 175},
+]
 
-print_skills(dict1)
+for x in players:
+    if x['total_bets'] >= 100:
+        print(f"{x['name']} | {x['country']} | {x['total_bets']} bets")
